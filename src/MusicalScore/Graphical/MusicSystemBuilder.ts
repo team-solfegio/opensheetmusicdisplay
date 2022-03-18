@@ -948,6 +948,8 @@ export class MusicSystemBuilder {
         for (let visStaffIdx: number = 0, len: number = currentSystem.StaffLines.length; visStaffIdx < len; ++visStaffIdx) {
             const staffLine: StaffLine = currentSystem.StaffLines[visStaffIdx];
             let currentXPosition: number = 0.0;
+            const totalWidth: number = 5000;
+            const measureWidth: number = totalWidth / staffLine.Measures.length;
             for (let measureIndex: number = 0; measureIndex < staffLine.Measures.length; measureIndex++) {
                 const measure: GraphicalMeasure = staffLine.Measures[measureIndex];
                 measure.setPositionInStaffline(currentXPosition);
@@ -957,9 +959,9 @@ export class MusicSystemBuilder {
                 //     }
                 // }
                 if (measureIndex === 0) {
-                    measure.setWidth(50*1.20); // first measure
+                    measure.setWidth(measureWidth*1.20); // first measure
                 } else {
-                    measure.setWidth(50);
+                    measure.setWidth(measureWidth);
                 }
                 if (measureIndex < this.currentSystemParams.systemMeasures.length) {
                     const startLine: SystemLinesEnum = this.currentSystemParams.systemMeasures[measureIndex].beginLine;
