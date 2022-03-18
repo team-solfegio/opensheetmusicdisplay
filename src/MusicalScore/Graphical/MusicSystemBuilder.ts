@@ -948,7 +948,7 @@ export class MusicSystemBuilder {
         for (let visStaffIdx: number = 0, len: number = currentSystem.StaffLines.length; visStaffIdx < len; ++visStaffIdx) {
             const staffLine: StaffLine = currentSystem.StaffLines[visStaffIdx];
             let currentXPosition: number = 0.0;
-            const totalWidth: number = 4500;
+            const totalWidth: number = 4000;
             const measureWidth: number = totalWidth / staffLine.Measures.length;
             for (let measureIndex: number = 0; measureIndex < staffLine.Measures.length; measureIndex++) {
                 const measure: GraphicalMeasure = staffLine.Measures[measureIndex];
