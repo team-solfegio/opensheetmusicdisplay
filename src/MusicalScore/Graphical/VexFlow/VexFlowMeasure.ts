@@ -276,7 +276,16 @@ export class VexFlowMeasure extends GraphicalMeasure {
             // extends Element is missing from class StaveModifier in DefinitelyTyped definitions, so setStyle isn't found
             timeSig.setStyle({ fillStyle: "#00000000"}); // transparent. requires VexflowPatch
         }
+
         this.updateInstructionWidth();
+
+        if (this.rules.FirstMeasureInstructionsPadding) {
+            // we are placing a spacer till 200px width, so the start of the notes are at the cursor
+            const modifier: VF.StaveModifier = new VF.StaveModifier();
+            modifier.setPadding(this.rules.FirstMeasureInstructionsPadding - this.beginInstructionsWidth * 10);
+
+            this.stave.addModifier(modifier, VF.StaveModifier.Position.BEGIN);
+        }
     }
 
     /**

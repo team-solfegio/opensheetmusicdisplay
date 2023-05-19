@@ -258,6 +258,7 @@ export class EngravingRules {
     public FixedMeasureWidthValue: number;
     public FixedMeasureFirstMeasureValue: number;
     public FixedMeasureLastMeasureValue: number;
+    public FirstMeasureInstructionsPadding: number;
     public DistanceBetweenVerticalSystemLines: number;
     public DistanceBetweenDotAndLine: number;
     public RepeatEndStartPadding: number;
@@ -682,6 +683,7 @@ export class EngravingRules {
         this.FixedMeasureWidthValue = undefined;
         this.FixedMeasureFirstMeasureValue = undefined;
         this.FixedMeasureLastMeasureValue = undefined;
+        this.FirstMeasureInstructionsPadding = undefined;
 
         // Line Widths
         this.MinimumCrossedBeamDifferenceMargin = 0.0001;
